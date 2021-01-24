@@ -1,7 +1,8 @@
 .input_search {
     background-color: rgba(30, 41, 55, var(--bg-opacity));
     border-radius: 9999px;
-    border:none;color: rgba(107, 114, 128, var(--text-opacity));
+    border:none;
+    color: rgba(107, 114, 128, var(--text-opacity));
     padding: 0.25rem 0.5rem;
     padding-left: 2rem;
     outline: 2px solid transparent;

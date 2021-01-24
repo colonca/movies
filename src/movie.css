@@ -1,0 +1,20 @@
+.poster {
+    transition: ease-in-out 150ms;
+}
+.poster:hover {
+    opacity: 0.75;
+}
+
+.description {
+    color: white;
+}
+
+.description a{
+   color : white;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+.description a:hover {
+    color : rgba(243, 244, 246, var(--text-opacity));
+}
