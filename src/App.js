@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Provider} from 'react-redux';
+import store from './store';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/header';
+import { Col, Container, Row } from 'react-bootstrap';
+import poster from './assets/img/poster_movie.jpg';
+import Movie from './components/movie';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <Provider store={store}>
+          <Header/>
+          <Container fluid className="position-relative">
+              <div className="popular_movies">
+                <h2 className="text-warning mt-4 font-weight-bolder" style={{textTransform:'uppercase'}}>Popular Movies</h2>
+                <Row> 
+                  <Movie/>
+                </Row>
+              </div>
+          </Container>
+     </Provider>
   );
 }
 
