@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import store from './store';
-import './index.css';
+import './assets/css/index.css';
 import Header from './components/header';
 import ListMovies from './components/list_movies';
 import DetailMovie from './components/detail_movie';

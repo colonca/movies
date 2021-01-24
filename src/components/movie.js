@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { Col } from 'react-bootstrap';
 import poster from '../assets/img/poster_movie.jpg';
-import '../movie.css';
+import '../assets/css/movie.css';
 
 function Movie(props){
     return (

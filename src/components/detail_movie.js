@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {Button, Col, Container, Row} from 'react-bootstrap';
-import '../detail_movie.css';
+import '../assets/css/detail_movie.css';
 import  poster from '../assets/img/poster_movie.jpg';
 
 function DetailMovie() {
