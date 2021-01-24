@@ -1,0 +1,13 @@
+.movie-info, .movie-cast {
+    border-bottom: 1px solid rgba(31, 41, 55, var(--bg-opacity));
+    padding: 2rem 1rem; 
+}
+
+.poster {
+    width: 24rem;
+}
+
+.movie-info h2 , .movie-cast h2{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
