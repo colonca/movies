@@ -7,10 +7,10 @@ const initState = {
 
 const reducer = (state = initState, action) => {
     switch (action.type) {
-        case 'ADD_TO_FAVORITES': 
+        case 'ADD_MOVIES': 
            return {
                ...state,
-               favorites: [...state.favorites,action.movie]
+               movies: action.movies
            };
         default:
             return state;

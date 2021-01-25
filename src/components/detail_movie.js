@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import {Button, Col, Container, Row} from 'react-bootstrap';
 import '../assets/css/detail_movie.css';
 import  poster from '../assets/img/poster_movie.jpg';
+import { getMovie } from '../services/movie_service';
 
 function DetailMovie() {
 
@@ -10,7 +11,7 @@ function DetailMovie() {
     const {id} = useParams();
     
     useEffect(() => {
-      
+       
     },[]);
   
     return (
