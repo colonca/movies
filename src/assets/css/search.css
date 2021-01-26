@@ -2,7 +2,7 @@
     background-color: rgba(30, 41, 55, var(--bg-opacity));
     border-radius: 9999px;
     border:none;
-    color: rgba(107, 114, 128, var(--text-opacity));
+    color: white;
     padding: 0.25rem 0.5rem;
     padding-left: 2rem;
     outline: 2px solid transparent;
@@ -15,8 +15,33 @@
   }
 
   .svg {
-      color: rgba(107, 114, 128, var(--text-opacity));
+      color:white;
       margin-top:0.5rem;
       margin-left: 0.5rem;
       width:1rem;
   }
+
+.list-movies {
+    background-color: rgba(30, 41, 55, var(--bg-opacity));
+    border-radius: 0.25rem;
+    width: 16rem;
+    margin-top: 1rem;
+    z-index: 1;
+}
+
+.item {
+    display: block;
+}
+
+.item:hover {
+    background-color: rgba(55, 65, 81, var(--bg-opacity));
+    border-radius: 0.25rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.spinner {
+    position: absolute;
+    top:0;
+    right: 0;
+}

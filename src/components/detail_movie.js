@@ -11,11 +11,12 @@ function DetailMovie() {
     const {id} = useParams();
     
     useEffect(() => {
+        setLoading(true);
         getMovie(id).then(movie => {
             setMovie(movie);
             setLoading(false);
         });
-    },[]);
+    },[id]);
 
 
     if(loading){
@@ -50,12 +51,12 @@ function DetailMovie() {
                                         <h4 className="text-white text-weight-bold">Feactued Cast</h4>
                                         <div className="d-flex mt-4">
                                           {
-                                              movie.credits.crew.map((item,index) => {
+                                              movie.credits.crew.map((crew,index) => {
                                                  if(index < 2) {
                                                    return (
-                                                     <div className="mr-4">
-                                                        <div className="pb-2">{item.name}</div>
-                                                        <div className="text-secondary">{item.job}</div>
+                                                     <div className="mr-4" key={crew.credit_id}>
+                                                        <div className="pb-2">{crew.name}</div>
+                                                        <div className="text-secondary">{crew.job}</div>
                                                     </div>); 
                                                  }
                                               })
@@ -78,7 +79,7 @@ function DetailMovie() {
                             movie.credits.cast.map((cast,index) => {
                                 if(index < 6) {
                                     return (
-                                        <Col xs={6} md={4} lg={2} className="mt-4 mx-auto">
+                                        <Col xs={6} md={4} lg={2} className="mt-4 mx-auto" key={cast.cast_id}>
                                             <img className="poster" src={`http://image.tmdb.org/t/p/w500${cast.profile_path}`} alt="poster_movie"/>   
                                             <div className="mt-2 description">
                                                 <p className="text-white font-weight-bold pb-1">{cast.name}</p>
@@ -100,7 +101,7 @@ function DetailMovie() {
                         movie.images.backdrops.map((image,index) => {
                             if(index < 6) {
                                 return (
-                                    <Col xs={6} md={6} lg={4} className="mt-4 mx-auto">
+                                    <Col xs={6} md={6} lg={4} className="mt-4 mx-auto" key={index}>
                                         <img className="poster" src={`http://image.tmdb.org/t/p/w500${image.file_path}`} alt="poster_movie"/>   
                                     </Col>
                                 ); 
