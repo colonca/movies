@@ -18,9 +18,7 @@ function Header() {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="mr-auto">
-                                <Nav.Link as={Link} to="/" style={{color:'white'}}>Movies</Nav.Link>
-                                <Nav.Link as={Link}  to="/" style={{color:'white'}}>TV Shows</Nav.Link>
-                                <Nav.Link as={Link} to="/" style={{color:'white'}}>Actors</Nav.Link>
+                                <Nav.Link as={Link} to="/favorites" style={{color:'white'}}>Favorites</Nav.Link>
                             </Nav>
                             <div className="d-flex">
                                 <Search/>

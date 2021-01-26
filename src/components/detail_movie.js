@@ -3,8 +3,10 @@ import {useParams} from 'react-router-dom';
 import {Button, Col, Container, Row} from 'react-bootstrap';
 import '../assets/css/detail_movie.css';
 import { getMovie } from '../services/movie_service';
+import Loading from './loading';
+import { connect } from 'react-redux';
 
-function DetailMovie() {
+function DetailMovie({favorites, addToFavorites}) {
 
     const [loading, setLoading ] = useState(true);
     const [movie,setMovie] = useState();
@@ -20,7 +22,7 @@ function DetailMovie() {
 
 
     if(loading){
-        return <div>loading</div>
+        return <Loading/>
     }
   
     return (
@@ -64,7 +66,14 @@ function DetailMovie() {
                                       </div>
                                 </div>
                                   <div className="mt-4">
-                                      <Button variant="warning">Add to favorites</Button>
+                                      {
+                                            favorites.findIndex(item => item.id === movie.id) === -1 && (<Button onClick = {() => addToFavorites(movie)} className="text-white font-weight-bold" variant="warning">
+                                                <svg className="mr-2 mb-1" style={{width:'1em'}}  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                                <span>Add to favorites</span>
+                                            </Button>)
+                                      }
                                   </div>
                             </div>
                         </Col>
@@ -112,7 +121,24 @@ function DetailMovie() {
               </Container>
           </div>
      </div>
-  );
+    );
 }
 
-export default DetailMovie;
+const mapStateToProps = state => {
+    return {
+        favorites : state.favorites
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+   return {
+        addToFavorites(movie) {
+            dispatch({
+               type: 'ADD_TO_FAVORITES',
+               movie
+            });
+        }
+   }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(DetailMovie);

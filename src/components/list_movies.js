@@ -2,14 +2,26 @@ import React,{useEffect, useState} from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import {getMovies} from '../services/movie_service';
+import Loading from './loading';
 import Movie from './movie';
 
 function ListMovies({movies, setMovies}) {
+    
+   const [loading, setLoading] = useState(false); 
 
    useEffect(()=> {
-     if(movies.length == 0)  
-        getMovies().then(movies => setMovies(movies));
+     if(movies.length == 0) {
+        setLoading(true);
+        getMovies().then(movies => {
+            setMovies(movies);
+            setLoading(false);
+        });
+     } 
    },[]); 
+
+   if(loading) {
+       return <Loading/>
+   }
 
    return  (
         <Container fluid className="position-relative">

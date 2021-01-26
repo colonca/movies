@@ -11,6 +11,7 @@ import './assets/css/index.css';
 import Header from './components/header';
 import ListMovies from './components/list_movies';
 import DetailMovie from './components/detail_movie';
+import Favorites from './components/favorites';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
        <Router>
           <Header/>
           <Switch>
+            <Route path="/favorites">
+              <Favorites/>
+            </Route>
             <Route path="/:id">
                <DetailMovie/>
             </Route>
