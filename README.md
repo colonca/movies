@@ -1,6 +1,6 @@
 # WikiMovies
 
-[Demo](https://movies-bb9dc.web.app/).
+Movies:  https://movies-bb9dc.web.app/
 
 
 
