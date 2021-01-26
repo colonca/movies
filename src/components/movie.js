@@ -1,13 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { Col } from 'react-bootstrap';
-import poster from '../assets/img/poster_movie.jpg';
 import '../assets/css/movie.css';
 
 function Movie(movie){
     return (
-        <Col xs={12} lg={3} className="mt-4">
-            <Link to={`/${movie.id}`} title="Hacker">
+        <Col xs={10} md={6} lg={3} className="mt-4 mx-auto">
+            <Link to={`/${movie.id}`} title={movie.title}>
                 <img className="poster" src={`http://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>   
             </Link>
             <div className="mt-2 description">

@@ -13,7 +13,7 @@ export function getMovies() {
 }
 
 export function getMovie(id) {
-   const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`; 
+   const apiUrl = `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits,images&api_key=${API_KEY}`; 
    return fetch(apiUrl)
          .then(res => res.json())
          .then(movie => movie);

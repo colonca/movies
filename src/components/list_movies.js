@@ -7,7 +7,8 @@ import Movie from './movie';
 function ListMovies({movies, setMovies}) {
 
    useEffect(()=> {
-     getMovies().then(movies => setMovies(movies));
+     if(movies.length == 0)  
+        getMovies().then(movies => setMovies(movies));
    },[]); 
 
    return  (
