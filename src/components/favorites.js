@@ -7,7 +7,7 @@ function Favorites({favorites}) {
     return (
         <div className="favorites">
         <Container>
-          <h2 className="font-weight-bold text-uppercase text-white mt-4 pb-2">IMAGES</h2> 
+        <h2  className="text-warning text-uppercase mt-4 font-weight-bold" style={{textTransform:'uppercase', fontSize:'2rem'}}>FAVORITES</h2>
           <Row>
               {
                  favorites.length > 0 ? favorites.map((movie) => {
