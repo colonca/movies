@@ -42,7 +42,7 @@ function Search() {
                     keyword.length > 2 && (
                         <div className="position-absolute list-movies">
                             {
-                                movies.length > 2 ? (
+                                movies.length > 0 ? (
                                     <ul>
                                     {
                                         movies.map(movie => (
