@@ -14,7 +14,7 @@ function Search() {
        if(keyword.length >= 2) {
             setLoading(true);
             searchMovies(keyword).then(movies => {
-                console.log(movies);
+               
                 setMovies(movies);
                 setLoading(false);
             });
